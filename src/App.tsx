@@ -29,7 +29,8 @@ const establishments: Establishment[] = [
     since: 'Ancestral',
     description: 'An independent 2BHK ancestral home refurbished with contemporary amenities in the rolling hills of Kotabagh. A sanctuary of peace and base camp for the Titeshwari Trek.',
     image: '/taliya-homestay.jpeg?v=2',
-    location: 'Kotabagh, Nainital'
+    location: 'Kotabagh, Nainital',
+    link: 'https://share.google/JjnLRl3ADqM5tx6i6'
   },
   {
     id: 'el-puntal',
@@ -38,7 +39,8 @@ const establishments: Establishment[] = [
     since: '2000',
     description: 'A legendary culinary destination in Ibiza, offering refined Mediterranean flavors with breathtaking views of the Balearic Sea.',
     image: '/el-puntal.jpeg?v=2',
-    location: 'Ibiza, Spain'
+    location: 'Ibiza, Spain',
+    link: 'https://cafeteriaelpuntal.es/'
   },
   {
     id: 'banaras',
@@ -47,7 +49,8 @@ const establishments: Establishment[] = [
     since: '2021',
     description: 'A modern tribute to the spiritual heart of India, blending contemporary culinary techniques with traditional heritage.',
     image: '/banaras-restaurant.jpeg?v=2',
-    location: 'Milan, Italy'
+    location: 'Milan, Italy',
+    link: 'https://banaras.it/'
   },
   {
     id: 'dhaba',
@@ -56,7 +59,8 @@ const establishments: Establishment[] = [
     since: '2008',
     description: 'A staple of authentic Indian cuisine, where the warmth of tradition meets exceptional hospitality.',
     image: '/the-dhaba.jpg?v=2',
-    location: 'Milan, Italy'
+    location: 'Milan, Italy',
+    link: 'https://www.thedhaba.it/'
   },
   {
     id: 'rangoli',
@@ -65,7 +69,46 @@ const establishments: Establishment[] = [
     since: '1997',
     description: 'The foundation of the group hospitality journey, showcasing 29 years of operational excellence.',
     image: '/rangoli-restaurant.jpg?v=2',
+    location: 'Milan, Italy',
+    link: 'https://rangoli.it/it/'
+  },
+  {
+    id: 'just-india',
+    name: 'Just India',
+    role: 'Consultant',
+    since: 'Active',
+    description: 'Strategic advisory for authentic Indian culinary projects and market entry strategies in Northern Italy.',
+    image: '/justIndia.jpeg?v=1',
     location: 'Milan, Italy'
+  },
+  {
+    id: 'india-trading',
+    name: 'India Trading SRL',
+    role: 'Co-founder',
+    since: 'Active',
+    description: 'Specializing in the import and distribution of premium Indian specialty goods to the European hospitality market.',
+    image: '/indiatrading_logo.jpeg?v=1',
+    location: 'Milan, Italy',
+    link: 'https://www.indiatradingsrl.com/en/home-en/'
+  },
+  {
+    id: 'rangoli-padova',
+    name: 'Rangoli Padova',
+    role: 'Consultant',
+    since: '2022',
+    description: 'Advisory role focused on operational excellence and brand scaling for the upscale Rangoli brand expansion.',
+    image: '/rangolipadova.jpeg?v=1',
+    location: 'Padova, Italy',
+    link: 'https://www.rangolipadova.it/'
+  },
+  {
+    id: 'gk-airbnb',
+    name: 'Greater Kailash Residence',
+    role: 'Owner',
+    since: '2020',
+    description: 'A premium luxury short-stay residence in New Delhi\'s prestigious Greater Kailash, offering curated Indian hospitality.',
+    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1980&auto=format&fit=crop',
+    location: 'Greater Kailash, New Delhi'
   }
 ];
 
@@ -273,7 +316,17 @@ export default function App() {
                   </div>
                   <div className="flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-[10px] font-mono tracking-widest opacity-30 uppercase">{est.location}</span>
-                    <ArrowRight className="w-4 h-4 text-brand-accent" />
+                    {est.link && (
+                      <a 
+                        href={est.link} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="flex items-center gap-2 text-brand-accent text-[10px] font-bold uppercase tracking-widest group/link"
+                      >
+                        Explore
+                        <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>

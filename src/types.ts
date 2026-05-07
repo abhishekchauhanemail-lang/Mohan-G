@@ -6,6 +6,7 @@ export interface Establishment {
   description: string;
   image: string;
   location: string;
+  link?: string;
 }
 
 export interface ConsultancyService {
